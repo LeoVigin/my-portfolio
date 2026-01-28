@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
+import type { NextConfig } from 'next'
+ 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+  sassOptions: {
+    // prependData: `@use "/style/_mixins.scss";`,
+  }
+}
+ 
+export default nextConfig
