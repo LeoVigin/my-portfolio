@@ -1,17 +1,20 @@
-$background: #ffffff;
-$foreground: #171717;
 $red: #8b2828;
 $black: #1f1f1f;
 $white: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: $background;
-  color: $foreground;
+  background-image: url("/temporary-background.png");
+  background-size: cover; // Scales the image to fill the area
+  background-position: center; // Keeps the focus in the middle
+  background-attachment: fixed; // Optional: Keeps bg still while scrolling
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  width: 100%;
 }
