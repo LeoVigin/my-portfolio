@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+  width: 100%;
+  align-items: center;
+}
+
+.about_me {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 10rem auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  .about_me_title {
+    width: max-content;
+  }
+  .about_me_text {
+    max-width: 25rem;
+  }
+}
+
+.my_projects {
+  display: grid;
+  justify-content: center;
+  .my_projects_pres {
+    text-align: center;
+  }
+}

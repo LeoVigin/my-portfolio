@@ -1,0 +1,89 @@
+// 1. Variables & Theming
+:root {
+  --color-bg: #00000015;
+
+  --size: clamp(10rem, 1rem + 40vmin, 30rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 60s;
+
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+.section {
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  gap: var(--gap);
+  width: 100%;
+  min-height: 25vh;
+
+  font-family: system-ui, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 100vw;
+  }
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+
+  &_group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: scroll-x var(--duration) linear infinite;
+    padding: 1rem;
+    .marquee_div {
+      display: flex;
+      color: white;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+  &_reverse &_group {
+    animation-direction: reverse;
+    animation-delay: -3s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee_group {
+    animation-play-state: paused !important;
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}

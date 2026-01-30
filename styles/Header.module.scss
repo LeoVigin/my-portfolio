@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  background: #0000002e;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  width: 100%;
+  padding: 1.5rem;
+  .header_nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .nav_list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+  }
+}
